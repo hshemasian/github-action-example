@@ -18,7 +18,6 @@ jobs:
   build:
     runs-on: ubuntu-latest
     needs: test
-    # תנאי הרצה: הג'וב ירוץ רק אם האירוע הוא push לברנץ' main (ולא ב-pull_request)
     if: github.event_name == 'push' && github.ref == 'refs/heads/main'
     steps:
       - name: Build app
