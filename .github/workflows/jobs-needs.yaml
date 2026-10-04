@@ -1,0 +1,18 @@
+name: ci-basic
+
+on:
+  push:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Run tests
+        run: echo "running tests"
+
+  build:
+    runs-on: ubuntu-latest
+    needs: test
+    steps:
+      - name: Build app
+        run: echo "building app"
