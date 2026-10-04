@@ -1,7 +1,7 @@
 name: trivy-scan
 
 on:
-   workflow_dispatch:
+  workflow_dispatch:
 
 jobs:
   scan:
@@ -11,10 +11,10 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
+      # התקנת Trivy CLI ישירות מול הסקריפט הרשמי
       - name: Install Trivy CLI
-        uses: aquasecurity/setup-trivy@v0.2.2
-        with:
-          version: 'latest'
+        run: |
+          curl -sfL https://raw.githubusercontent.com/aquasecurity/trivy/main/contrib/install.sh | sh -s -- -b /usr/local/bin
 
       - name: Print Trivy version
         run: trivy --version
