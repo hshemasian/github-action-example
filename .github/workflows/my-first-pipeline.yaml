@@ -1,0 +1,14 @@
+name:  my-first-pipeline
+
+on:
+  workflow_dispatch:
+jobs:
+  greeting:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Prints "Hello, World"
+        run: echo "Hello World from GitHub Actions"
+      
+      - name: Print current date
+        run: date
+      
