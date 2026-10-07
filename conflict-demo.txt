@@ -1,5 +1,0 @@
- HEAD
-Change from dev branch
-
-Change from feature branch
- feature-conflict
