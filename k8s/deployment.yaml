@@ -16,6 +16,6 @@ spec:
     spec:
       containers:
       - name: web-app
-        image: hillel456/my-first-devsecops-app:v1.0
+        image: hillel456/my-first-devsecops-app:2f141afb9d0aee25e25bd3cacbfaa80a6dbf4f22
         ports:
         - containerPort: 80
