@@ -1,0 +1,20 @@
+name: Send Slack Notification
+
+on:
+  push:
+    branches: [ "main" ]
+
+jobs:
+  notify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Send Slack Notification
+        uses: rtCamp/action-slack-notify@v2
+        env:
+          SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
+          SLACK_MESSAGE: 'הפייפליין רץ בהצלחה והודעה נשלחה מערוץ ה-DevOps לערוץ ב-Slack!'
+          SLACK_TITLE: 'DevOps Alert'
+          SLACK_COLOR: 'good'
